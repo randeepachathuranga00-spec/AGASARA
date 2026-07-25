@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giftly ERP - Gift Shop Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1F3B36">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<!-- Barcode generation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/JsBarcode/3.11.5/JsBarcode.all.min.js"></script>
+<!-- Barcode camera scanning -->
+<script src="https://unpkg.com/@zxing/library@0.20.0"></script>
+</head>
+<body>
+
+<div id="gs-root">
+  <!-- Login screen -->
+  <div id="gs-login-screen"></div>
+
+  <!-- Main app (hidden until logged in) -->
+  <div id="gs-app" style="display:none;">
+    <div class="gs-sidebar">
+      <div class="gs-brand">
+        <div class="gs-brand-mark" id="gs-brand-initial">G</div>
+        <div class="gs-brand-text"><b id="gs-brand-name">Giftly ERP</b><span>Colombo 7 Gift Shop</span></div>
+      </div>
+      <div class="gs-nav" id="gs-nav"></div>
+      <div class="gs-user-box" id="gs-user-box"></div>
+      <div class="gs-sidebar-foot">Built for your shop &middot; data stays on this device</div>
+    </div>
+    <div class="gs-main">
+      <div class="gs-topbar">
+        <div>
+          <h1 id="gs-title">Dashboard</h1>
+          <div class="gs-topbar-sub" id="gs-subtitle">Today's snapshot of your shop</div>
+        </div>
+        <div class="gs-date" id="gs-date"></div>
+      </div>
+      <div class="gs-content" id="gs-content">
+        <div class="gs-loading">Loading your shop data…</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="auth.js"></script>
+<script src="barcode.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
